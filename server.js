@@ -8,7 +8,7 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(bodyParser.json())
 
-MongoVar.connect('mongodb+srv://user1:yeet@cluster0.cuqip.mongodb.net/?retryWrites=true&w=majority', (err, client) => {
+MongoVar.connect(process.env.DB_STRING, (err, client) => {
     
     if (err) return console.error(err)
     console.log('Connected to Database')
